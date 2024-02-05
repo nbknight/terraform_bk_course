@@ -51,5 +51,11 @@ variable "environment" {
   description = "Environment for deployment"
   type        = string
   default     = "dev"
-
 }
+
+# variable "phone_number" {
+#   description = "Phone number"
+#   type = string
+#   default = "123-456-7890"
+
+# }
