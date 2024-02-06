@@ -36,7 +36,7 @@ locals {
   server_name = "ec2-${var.environment}-api-${var.variables_sub_az}"
 }
 
-# Terraform Data Block - Lookup Ubuntu 20.04
+# Terraform Data Block - Lookup Ubuntu 22.04
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -61,6 +61,7 @@ resource "aws_vpc" "vpc" {
     Name        = var.vpc_name
     Environment = "demo_environment"
     Terraform   = "true"
+    region      = data.aws_region.current.name
   }
 }
 
